@@ -1,0 +1,27 @@
+{
+  "name": "2021spring",
+  "version": "1.0.0",
+  "description": "server package for application",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anil-deepak/in-class.git"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "dotenv": "^8.2.0"
+  },
+  "author": "Anil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anil-deepak/in-class/issues"
+  },
+  "homepage": "https://github.com/anil-deepak/in-class#readme"
+}
