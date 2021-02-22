@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS Dropdown menu</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-image: url("http://cs.newpaltz.edu/~talathoa1/learn/MyImages/covid.jpg");
+        background-size: 100% 121%;
+        background-attachment: fixed;
+      }
+
+      ul {
+        padding: 0%;
+        background-color: gray;
+        list-style: none;
+      }
+      ul li {
+        position: relative;
+        text-align: left;
+
+        display: inline-block;
+      }
+      li {
+        padding: 5px 15px;
+        width: 70px;
+        border-right: 1px solid;
+      }
+      ul li a {
+        display: block;
+        color: #ffffff;
+        text-decoration: wheat;
+        font-size: 150%;
+        font-style: oblique;
+        font-weight: bolder;
+      }
+
+      ul li ul.dropdown {
+        display: none;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        z-index: 999;
+      }
+
+      ul li:hover ul.dropdown {
+        display: block;
+      }
+      ul li ul.dropdown li {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="menu">
+        <div>
+            File
+            <ul>
+                <li><a href="">Open</a></li>
+                <li><a href="">Save</a></li>
+                <li><a href="">Print</a></li>
+                <li><a href="">Exit</a></li>
+            </ul>
+        </div>
+        <div>
+            Edit
+            <ul>
+                <li><a href="">Copy</a></li>
+                <li><a href="">Cut</a></li>
+                <li><a href="">Paste</a></li>
+                <li><hr ></li>
+                <li><a href="">Format</a></li>
+            </ul>
+        </div>
+        <div>
+            Help
+            <ul>
+                <li><a href="">About</a></li>
+            </ul>
+        </div>
+    </div>
+    </ul>
+  </body>
+</html>
