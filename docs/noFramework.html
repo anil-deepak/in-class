@@ -7,13 +7,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
 </head>
 <body>
-
     <nav class="navbar container" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io">
             <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
           </a>
-
+      
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -23,24 +22,24 @@
 
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item">
+            <a class="navbar-item" href="noFramework.html">
               Home
             </a>
 
             <a class="navbar-item">
               Documentation
             </a>
-
+      
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">
                 More
               </a>
-
+      
               <div class="navbar-dropdown">
                 <a class="navbar-item">
                   About
                 </a>
-                <a class="navbar-item">
+                <a class="navbar-item" href="jobs.html">
                   Jobs
                 </a>
                 <a class="navbar-item">
@@ -53,7 +52,7 @@
               </div>
             </div>
           </div>
-
+      
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
@@ -68,13 +67,11 @@
           </div>
         </div>
       </nav>
-
-
+    
     <div class="container" id="controlThis">
-
-
+    
         <div class="columns">
-
+            
             <div class="column is-two-thirds">
                 <div class="card">
                   <header class="card-header">
@@ -82,17 +79,14 @@
                       Shop
                     </p>
                   </header>
-
+                
                   <div class="card-content">
-
                       <div class="media" v-for="(x, i) in inventory">
                         <div class="media-left">
                           <figure class="image is-48x48">
                             <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
                           </figure>
                         </div>
-
-
                         <div class="media-content">
                         <button class="button is-small is-primary is-pulled-right" @click.prevent="add(i)">
                           Add to Cart
@@ -101,7 +95,7 @@
                           <p class="subtitle is-6">${{x.price}}</p>
                         </div>
                       </div>
-
+                  
                      </div>
                   </div>
             </div>
@@ -112,34 +106,26 @@
                       Cart
                     </p>
                   </header>
-
                   <table class="table is-striped is-narrow is-hoverable is-fullwidth">
-
                     <tr><th>Name</th><th>Qty</th><th>Cost</th></tr>
-
-
                     <tr  v-for="(x, i) in cart">
                       <td>{{x.name}}</td>
                       <td>{{x.qty}}</td>
                       <td>{{x.price * x.qty}}</td>
                     </tr>
-
-
                     <tr><th>Total</th><th></th><th> {{ cart.reduce((tot, x) => tot + x.qty * x.price, 0 ) }} </th></tr>
                   </table>
-
+                
                   <div class="card-content">
-
-
+                      
+                  
                      <button class="button is-success">Checkout</button>
                   </div>
             </div>
         </div>
     </div>
-
     <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-
     <script>
         const person1 = {
           name: "Moshe Plotkin",
@@ -151,9 +137,7 @@
             zip: '12561'
           }
         };
-
         console.log({person1});
-
         var app = new Vue({
           el: '#controlThis',
           data: {
@@ -172,7 +156,6 @@
             }
           }
         })
-
     </script>
 </body>
 </html>
