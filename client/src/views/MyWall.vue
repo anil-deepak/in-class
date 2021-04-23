@@ -1,7 +1,11 @@
 <template>
   <div id="my-wall">
     <div class="columns">
-      <div class="column is-one-quarter"></div>
+      <div class="column is-one-quarter">
+        <div class="content-item">
+          <FriendsShort />
+        </div>
+      </div>
       <div class="column">
         <div class="content-item">
           <div class="card">
@@ -45,7 +49,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="field is-horizontal">
                   <div class="field-label is-normal">
                     <label class="label">Picture URL</label>
@@ -64,7 +67,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="field is-horizontal">
                   <div class="field-label is-normal">
                     <label class="label">Caption</label>
@@ -81,7 +83,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="field is-horizontal">
                   <div class="field-label">
                     <!-- Left empty for spacing -->
@@ -98,16 +99,18 @@
             </div>
           </div>
         </div>
-
         <div class="content-item" v-for="(post, i) in posts" :key="i">
           <ContentCard :post="post" />
         </div>
       </div>
-      <div class="column is-one-quarter"></div>
+      <div class="column is-one-quarter">
+        <div class="content-item">
+          <ContentCard :post="newPost" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
-
 <script>
 import ContentCard from "../components/ContentCard";
 export default {
@@ -162,10 +165,9 @@ export default {
   },
 };
 </script>
-
 <style>
 .content-item {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-</style> 
+</style>
