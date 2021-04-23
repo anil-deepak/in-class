@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="card-image">
-      <figure class="image">
+      <figure class="image is-4by3">
         <img :src="post.src" :alt="post.alt" />
       </figure>
     </div>
@@ -27,6 +27,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   props: {
@@ -34,5 +35,6 @@ export default {
   },
 };
 </script>
+
 <style>
-</style>
+</style> 

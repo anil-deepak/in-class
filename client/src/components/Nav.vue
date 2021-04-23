@@ -15,8 +15,7 @@
         class="navbar-burger"
         aria-label="menu"
         aria-expanded="false"
-        :class="{ 'is-active': isActive }"
-        @click.prevent="isActive = !isActive"
+        data-target="navbarBasicExample"
       >
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -24,7 +23,7 @@
       </a>
     </div>
 
-    <div class="navbar-menu" :class="{ 'is-active': isActive }">
+    <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
         <router-link to="/" class="navbar-item">Feed</router-link>
         <router-link to="/mywall" class="navbar-item">My Wall</router-link>
@@ -48,24 +47,19 @@
       <div class="navbar-end">
         <router-link to="/Shop" class="navbar-item">Shop</router-link>
         <div class="navbar-item">
-          <login-badge />
+          <div class="buttons">
+            <a class="button is-primary">
+              <strong>Sign up</strong>
+            </a>
+            <a class="button is-light"> Log in </a>
+          </div>
         </div>
       </div>
     </div>
   </nav>
 </template>
-
 <script>
-import LoginBadge from "./LoginBadge";
-export default {
-  data: () => ({
-    isActive: false,
-  }),
-  components: {
-    LoginBadge,
-  },
-};
+export default {};
 </script>
-
 <style>
 </style>
