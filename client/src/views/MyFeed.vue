@@ -28,7 +28,7 @@
 import Vue from "vue";
 import ContentCard from "../components/ContentCard";
 import ContentCreation from "../components/ContentCreation.vue";
-import { GetMyPosts } from "../models/Posts";
+import { GetMyFeed } from "../models/Posts";
 export default Vue.extend({
   data: () => ({
     newPost: {
@@ -37,7 +37,7 @@ export default Vue.extend({
     posts: [],
   }),
   mounted() {
-    this.posts = GetMyPosts();
+    this.posts = GetMyFeed();
   },
   components: {
     ContentCard,
@@ -60,4 +60,4 @@ export default Vue.extend({
   margin-top: 10px;
   margin-bottom: 10px;
 }
-</style>
+</style> 
