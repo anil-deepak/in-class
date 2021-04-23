@@ -1,6 +1,6 @@
 <template>
           <div class="columns">
-
+            
             <div class="column is-two-thirds">
                 <div class="card">
                   <header class="card-header">
@@ -8,7 +8,7 @@
                       Shop
                     </p>
                   </header>
-
+                
                   <div class="card-content">
 
                       <div class="media" v-for="(x, i) in inventory" :key="i">
@@ -27,7 +27,7 @@
                           <p class="subtitle is-6">${{x.price}}</p>
                         </div>
                       </div>
-
+                  
                      </div>
                   </div>
             </div>
@@ -53,10 +53,10 @@
 
                     <tr><th>Total</th><th></th><th> {{ cart.reduce((tot, x) => tot + x.qty * x.price, 0 ) }} </th></tr>
                   </table>
-
+                
                   <div class="card-content">
-
-
+                      
+                  
                      <button class="button is-success">Checkout</button>
                   </div>
             </div>
@@ -85,4 +85,5 @@ export default {
 </script>
 
 <style>
+
 </style>

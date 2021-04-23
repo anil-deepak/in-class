@@ -1,48 +1,29 @@
-import Session from "./Session";
-const posts = [
-    {
-        src: "https://bulma.io/images/placeholders/1280x960.png",
-        alt: "Placeholder image",
-        caption: "Lorem Ipsom",
-        time: Date(),
-        user: {
-            name: "John Smith",
-            handle: "@johnsmith",
-            pic: "https://bulma.io/images/placeholders/96x96.png"
-        }
-    },
-    {
-        src: "https://bulma.io/images/placeholders/1280x960.png",
-        alt: "Placeholder image",
-        caption: "We want Moshiach Now",
-        time: Date(),
-        user: {
-            name: "Amber Heard",
-            handle: "@Heard",
-            pic: "https://bulma.io/images/placeholders/96x96.png"
-        }
-    },
-    {
-        src: "https://bulma.io/images/placeholders/1280x960.png",
-        alt: "Placeholder image",
-        caption: "Have a wonderful day",
-        time: Date(),
-        user: {
-            name: "Anil Deepak ",
-            handle: "@Talathoti",
-            pic: "https://bulma.io/images/placeholders/96x96.png"
-        }
-    },
-];
+//import Session from "./Session";
+import { api } from "../models/myFetch";
 
-export function GetMyPosts() {
-    return GetPostsForUser(Session.user.handle);
+
+/* B"H
+    Access to all the posts
+*/
+
+export function GetMyPosts(){
+    return api("posts")
 }
 
-export function GetPostsForUser(id) {
-    return posts.filter(x => x.user.handle == id);
+export function GetPostsForUser(handle){
+    return api(`posts/${handle}`)
 }
 
-export function GetMyFeed() {
-    return posts;
+export function GetMyFeed(){
+    return api("posts/feed");
+}
+
+export function AddPost(post){
+    return api("posts", post );
+}
+
+export function DeletePost(post_id){
+    // This wont actually delete the correct item unless you are an administrator viewing all posts.
+    //  TODO: add real ids to posts so that we can address them properly
+    return api("posts/" + post_id, { }, "DELETE" );
 }

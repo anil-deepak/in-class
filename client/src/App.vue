@@ -1,15 +1,17 @@
 <template>
   <div id="app">
-        <MyNav />
+    <MyNav />
     <div class="container">
       <router-view/>
-         </div>
-         
+    </div>
+
+
   </div>
 </template>
 
 <script>
 import MyNav from "./components/Nav";
+
 export default {
   components: {
     MyNav
@@ -18,4 +20,5 @@ export default {
 </script>
 
 <style lang="scss">
+
 </style>
