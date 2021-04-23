@@ -9,21 +9,20 @@
         <i class="fab fa-instagram fa-3x fa-fw fa-pulse"></i>
         Ista-Gratitude
       </a>
-
       <a
         role="button"
         class="navbar-burger"
         aria-label="menu"
         aria-expanded="false"
-        data-target="navbarBasicExample"
+        :class="{ 'is-active': isActive }"
+        @click.prevent="isActive = !isActive"
       >
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
-
-    <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-menu" :class="{ 'is-active': isActive }">
       <div class="navbar-start">
         <router-link to="/" class="navbar-item">Feed</router-link>
         <router-link to="/mywall" class="navbar-item">My Wall</router-link>
@@ -58,8 +57,14 @@
     </div>
   </nav>
 </template>
+
 <script>
-export default {};
+export default {
+  data: () => ({
+    isActive: false,
+  }),
+};
 </script>
+
 <style>
 </style>
