@@ -9,6 +9,7 @@
         <i class="fab fa-instagram fa-3x fa-fw fa-pulse"></i>
         Ista-Gratitude
       </a>
+
       <a
         role="button"
         class="navbar-burger"
@@ -22,6 +23,7 @@
         <span aria-hidden="true"></span>
       </a>
     </div>
+
     <div class="navbar-menu" :class="{ 'is-active': isActive }">
       <div class="navbar-start">
         <router-link to="/" class="navbar-item">Feed</router-link>
@@ -46,12 +48,7 @@
       <div class="navbar-end">
         <router-link to="/Shop" class="navbar-item">Shop</router-link>
         <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-primary">
-              <strong>Sign up</strong>
-            </a>
-            <a class="button is-light"> Log in </a>
-          </div>
+          <login-badge />
         </div>
       </div>
     </div>
@@ -59,10 +56,14 @@
 </template>
 
 <script>
+import LoginBadge from "./LoginBadge";
 export default {
   data: () => ({
     isActive: false,
   }),
+  components: {
+    LoginBadge,
+  },
 };
 </script>
 

@@ -9,6 +9,7 @@
     <div v-else>Hello Moshe Plotkin (<a @click="logout"> Log out </a>)</div>
   </div>
 </template>
+
 <script>
 import Session from "../models/Session";
 export default {
@@ -27,5 +28,6 @@ export default {
   },
 };
 </script>
+
 <style>
 </style> 
